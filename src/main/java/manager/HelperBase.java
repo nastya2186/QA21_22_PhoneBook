@@ -40,6 +40,14 @@ public class HelperBase {
         return list.size() >0;
     }
 
+    public void pause(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public boolean isAlertPresent(String message) {
         Alert alert = new WebDriverWait(wd, 10)
                 .until(ExpectedConditions.alertIsPresent());
@@ -55,4 +63,7 @@ public class HelperBase {
     }
 
 
+//    public String getMessage() {
+//        return wd.findElement(By.cssSelector(".contact-item_card__2SOIM")).getText();
+//    }
 }

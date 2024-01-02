@@ -20,7 +20,7 @@ public class RegistrationTests extends TestBase{
        Random random = new Random();
        int i = random.nextInt(1000);
 //        int i = (int)(System.currentTimeMillis()/1000%3600);
-        User user = new User().withEmail("maks"+i+"@gmail.com").withPassword("Maks04062019");
+        User user = new User().withEmail("maks"+i+"@gmail.com").withPassword("Maks04062019#");
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();
