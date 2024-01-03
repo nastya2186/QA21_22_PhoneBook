@@ -18,7 +18,7 @@ if(!app.getHelperUser().isLogged()){
 @Test
     public void addNewContactSuccess(){
     Contact contact = Contact.builder()
-            .name("Vika")
+            .name("Liza")
             .lastName("Kim")
             .phone("0587285656")
             .email("Nastya@gmail.com")
@@ -28,7 +28,7 @@ if(!app.getHelperUser().isLogged()){
     app.getHelperContact().openAddContactForm();
     app.getHelperContact().fillContactForm(contact);
     app.getHelperContact().save();
-   // Assert.assertEquals(app.getHelperUser().getMessage(), "Vika");
+    Assert.assertEquals(app.getHelperContact().getMessage(), contact.getName());
 
 }
 
@@ -44,7 +44,7 @@ if(!app.getHelperUser().isLogged()){
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
         app.getHelperContact().save();
-       // Assert.assertEquals(app.getHelperUser().getMessage(), "Liza");
+
 
     }
 

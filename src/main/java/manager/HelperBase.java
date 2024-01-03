@@ -63,7 +63,7 @@ public class HelperBase {
     }
 
 
-//    public String getMessage() {
-//        return wd.findElement(By.cssSelector(".contact-item_card__2SOIM")).getText();
-//    }
+    public String getMessage() {
+        return wd.findElement(By.cssSelector(".contact-item_card__2SOIM>h2")).getText();
+    }
 }
