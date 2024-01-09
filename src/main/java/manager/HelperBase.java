@@ -14,6 +14,8 @@ public class HelperBase {
 
     WebDriver wd;
 
+
+
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
@@ -75,6 +77,9 @@ public class HelperBase {
     public String getMessage() {
         return wd.findElement(By.cssSelector(".contact-item_card__2SOIM>h3")).getText();
     }
+    public String getNotification() {
+        return wd.findElement(By.cssSelector(".contact-page_message__2qafk")).getText();
+    }
 
 
     public void getScreen(String link) {
@@ -86,6 +91,11 @@ public class HelperBase {
             throw new RuntimeException(e);
         }
     }
+
+
+
+
+
 }
 
 

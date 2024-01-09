@@ -60,4 +60,39 @@ public class HelperContact extends HelperBase{
     }
 
 
+    public void deleteAllContacts() {
+        List<WebElement>list = wd.findElements(By.cssSelector(".contact-item_card__2SOIM"));
+
+        for(WebElement el:list){
+
+            pause(1500);
+            click(By.cssSelector(".contact-item_card__2SOIM"));
+            click(By.xpath("//*[text()='Remove']"));
+
+
+        }
+
+
+
+    }
+
+
+    public void provideContacts() {
+        int i = (int)(System.currentTimeMillis()/1000%3600);
+        List<WebElement>list = wd.findElements(By.cssSelector(".contact-item_card__2SOIM"));
+        if(list.size()<3){
+            openAddContactForm();
+            fillContactForm(Contact.builder()
+                    .name("Liza")
+                    .lastName("Kim")
+                    .phone("0587285"+i)
+                    .email("Nasty"+i+"@gmail.com")
+                    .address("Silver 10")
+                    .description("second number 054898884")
+                    .build());
+            save();
+
+
+        }
+    }
 }

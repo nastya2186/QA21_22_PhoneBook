@@ -1,6 +1,7 @@
 package tests;
 
 import models.User;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,7 +12,7 @@ public class RemoveContactsTests extends TestBase{
         if (!app.getHelperUser().isLogged()) {
             app.getHelperUser().login(new User().withEmail("liza19@gmail.com").withPassword("Maksliza1914#"));
         }
-//        app.getHelperContact().provideContacts();
+       app.getHelperContact().provideContacts();
     }
 
     @Test
@@ -20,7 +21,7 @@ public class RemoveContactsTests extends TestBase{
     }
     @Test
     public void removeAllContacts(){
-
-
+        app.getHelperContact().deleteAllContacts();
+        Assert.assertTrue(app.getHelperContact().getNotification().contains("No Contacts here!"));
     }
 }
