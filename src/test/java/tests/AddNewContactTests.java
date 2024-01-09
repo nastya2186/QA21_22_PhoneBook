@@ -28,6 +28,8 @@ if(!app.getHelperUser().isLogged()){
             .build();
     app.getHelperContact().openAddContactForm();
     app.getHelperContact().fillContactForm(contact);
+   // app.getHelperContact().pause(1500);
+    app.getHelperContact().getScreen("src/test/screenshots/screen-"+i+".png");
     app.getHelperContact().save();
     Assert.assertTrue(app.getHelperContact().isContactAddedByName(contact.getName()));
     Assert.assertTrue(app.getHelperContact().isContactAddedByPhone(contact.getPhone()));
@@ -46,6 +48,7 @@ if(!app.getHelperUser().isLogged()){
                 .build();
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
+        app.getHelperContact().pause(1500);
         app.getHelperContact().save();
         Assert.assertTrue(app.getHelperContact().isContactAddedByName(contact.getName()));
         Assert.assertTrue(app.getHelperContact().isContactAddedByPhone(contact.getPhone()));
@@ -65,6 +68,7 @@ if(!app.getHelperUser().isLogged()){
                 .build();
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
+        app.getHelperContact().pause(1500);
         app.getHelperContact().save();
         Assert.assertTrue(app.getHelperContact().isAddPageStillDisplayed());
 
@@ -83,6 +87,7 @@ if(!app.getHelperUser().isLogged()){
                 .build();
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
+        app.getHelperContact().pause(1500);
         app.getHelperContact().save();
         Assert.assertTrue(app.getHelperContact().isAddPageStillDisplayed());
 
@@ -91,14 +96,15 @@ if(!app.getHelperUser().isLogged()){
     @Test
     public void addNewContactWrongLastName(){
         Contact contact = Contact.builder()
-                .name(" ")
-                .lastName("Kim")
+                .name("maks")
+                .lastName("")
                 .phone("0587285657")
                 .email("Nastya@gmail.com")
                 .address("Silver 10")
                 .build();
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
+        app.getHelperContact().pause(1500);
         app.getHelperContact().save();
         Assert.assertTrue(app.getHelperContact().isAddPageStillDisplayed());
 
@@ -119,6 +125,7 @@ if(!app.getHelperUser().isLogged()){
                 .build();
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
+        app.getHelperContact().pause(1500);
         app.getHelperContact().save();
 
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Phone not valid: Phone number must contain " +
@@ -139,6 +146,7 @@ if(!app.getHelperUser().isLogged()){
                 .build();
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
+        app.getHelperContact().pause(1500);
         app.getHelperContact().save();
         Assert.assertTrue(app.getHelperUser().isAlertPresent("Email not valid: must be a well-formed email address"));
 
