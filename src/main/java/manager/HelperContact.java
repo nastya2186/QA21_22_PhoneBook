@@ -71,16 +71,25 @@ public class HelperContact extends HelperBase{
 
 
         }
+    }
 
 
+    public void deleteOneContacts() {
+
+
+        click(By.cssSelector(".contact-item_card__2SOIM"));
+        click(By.xpath("//*[text()='Remove']"));
 
     }
+
+
+
 
 
     public void provideContacts() {
         int i = (int)(System.currentTimeMillis()/1000%3600);
         List<WebElement>list = wd.findElements(By.cssSelector(".contact-item_card__2SOIM"));
-        if(list.size()<3){
+            if(list.size()<3){
             openAddContactForm();
             fillContactForm(Contact.builder()
                     .name("Liza")
@@ -95,4 +104,9 @@ public class HelperContact extends HelperBase{
 
         }
     }
+
+
+
+
+
 }

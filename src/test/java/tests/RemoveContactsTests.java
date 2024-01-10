@@ -12,11 +12,14 @@ public class RemoveContactsTests extends TestBase{
         if (!app.getHelperUser().isLogged()) {
             app.getHelperUser().login(new User().withEmail("liza19@gmail.com").withPassword("Maksliza1914#"));
         }
+
        app.getHelperContact().provideContacts();
     }
 
     @Test
     public void removeFirstContact(){
+        app.getHelperContact().deleteOneContacts();
+        //Assert.assertTrue(app.getHelperContact().isCountOne());
 
     }
     @Test
