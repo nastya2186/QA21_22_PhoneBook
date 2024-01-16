@@ -4,6 +4,8 @@ import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,6 +15,7 @@ import java.util.List;
 public class HelperBase {
 
     WebDriver wd;
+    Logger logger = LoggerFactory.getLogger(HelperBase.class);
 
 
 
@@ -26,7 +29,7 @@ public class HelperBase {
         element.clear();
         clearNew(element);
         if (text != null) {
-            System.out.println("hello");
+            //System.out.println("hello");
             element.sendKeys(text);
         }
 

@@ -1,0 +1,6 @@
+15:56:46.611 INFO  manager.ApplicationManager - All tests run in Chrome Browser
+15:56:48.113 INFO  manager.ApplicationManager - The link---https://telranedu.web.app/home
+15:56:48.153 INFO  tests.TestBase - Name of method    loginSuccess
+15:56:53.183 INFO  tests.TestBase - Start test with name `loginSuccess`
+15:56:53.184 INFO  tests.TestBase - Test data --->email: `liza19@gmail.com` & password: `Maksliza1914#`
+15:56:54.956 INFO  tests.TestBase - Assert check is Element button 'Sign Out' present

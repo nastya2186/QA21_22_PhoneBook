@@ -14,12 +14,14 @@ public class RemoveContactsTests extends TestBase{
         }
 
        app.getHelperContact().provideContacts();
+
     }
 
     @Test
     public void removeFirstContact(){
-        app.getHelperContact().deleteOneContacts();
-        //Assert.assertTrue(app.getHelperContact().isCountOne());
+        Assert.assertEquals(app.getHelperContact().removeOneContacts(),1);
+
+
 
     }
     @Test

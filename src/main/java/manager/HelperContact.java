@@ -79,6 +79,8 @@ public class HelperContact extends HelperBase{
 
         click(By.cssSelector(".contact-item_card__2SOIM"));
         click(By.xpath("//*[text()='Remove']"));
+        pause(1500);
+
 
     }
 
@@ -106,7 +108,16 @@ public class HelperContact extends HelperBase{
     }
 
 
+    public int removeOneContacts() {
+        int before = countOfContacts();
+        logger.info("Number of contacts before remove is --->"+before);
+deleteOneContacts();
+        int after = countOfContacts();
+        logger.info("Number of contacts after remove is --->"+after);
+        return before-after;
+    }
 
-
-
+    private int countOfContacts() {
+        return wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
+    }
 }

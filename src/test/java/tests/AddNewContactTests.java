@@ -26,6 +26,7 @@ if(!app.getHelperUser().isLogged()){
             .address("Silver 10")
             .description("second number 054898884")
             .build();
+    logger.info("Test run with data-->"+contact.toString());
     app.getHelperContact().openAddContactForm();
     app.getHelperContact().fillContactForm(contact);
    // app.getHelperContact().pause(1500);
@@ -85,6 +86,7 @@ if(!app.getHelperUser().isLogged()){
                 .email("nast22@gmail.com")
                 .address(" ")
                 .build();
+        logger.info("Test run with data-->"+contact.toString());
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
         app.getHelperContact().pause(1500);
@@ -102,6 +104,7 @@ if(!app.getHelperUser().isLogged()){
                 .email("Nastya@gmail.com")
                 .address("Silver 10")
                 .build();
+        logger.info("Test run with data-->"+contact.toString());
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
         app.getHelperContact().pause(1500);
@@ -123,6 +126,7 @@ if(!app.getHelperUser().isLogged()){
                 .address("Silver 10")
                 .description("second number 054898884")
                 .build();
+        logger.info("Test run with data-->"+contact.toString());
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
         app.getHelperContact().pause(1500);
@@ -144,6 +148,7 @@ if(!app.getHelperUser().isLogged()){
                 .address("Silver 10")
                 .description("second number 054898884")
                 .build();
+        logger.info("Test run with data-->"+contact.toString());
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
         app.getHelperContact().pause(1500);
