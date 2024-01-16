@@ -10,6 +10,20 @@ import org.slf4j.LoggerFactory;
 public class ListenerWD extends AbstractWebDriverEventListener {
     Logger logger = LoggerFactory.getLogger(ListenerWD.class);
 
+
+    @Override
+    public void onException(Throwable throwable, WebDriver driver) {
+        super.onException(throwable, driver);
+        logger.info("Huston we have a problem!");
+        logger.info(throwable.getMessage());
+        logger.info(throwable.fillInStackTrace().toString());
+        int i = (int)(System.currentTimeMillis()/1000%3600);
+        String link = "src/test/screenshots/screen-"+ i + ".png";
+        HelperBase helperBase = new HelperBase(driver);
+        helperBase.getScreen(link);
+        logger.info("This is a link to screenshot with error--->"+ link);
+    }
+
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
         super.beforeFindBy(by, element, driver);

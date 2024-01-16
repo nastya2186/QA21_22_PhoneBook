@@ -27,6 +27,7 @@ public class ApplicationManager {
         logger.info("The link---"+ wd.getCurrentUrl());
         helperUser = new HelperUser(wd);
         helperContact = new HelperContact(wd);
+        wd.register(new ListenerWD());
 
 
     }
