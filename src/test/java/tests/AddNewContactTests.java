@@ -1,5 +1,7 @@
 package tests;
 
+import manager.DataProviderContact;
+import manager.DataProviderUser;
 import models.Contact;
 import models.User;
 import org.testng.Assert;
@@ -15,17 +17,17 @@ if(!app.getHelperUser().isLogged()){
 }
 }
 
-@Test
-    public void addNewContactSuccess(){
+@Test(dataProvider = "contactSuccess", dataProviderClass = DataProviderContact.class)
+    public void addNewContactSuccess(Contact contact){
     int i = (int)(System.currentTimeMillis()/1000%3600);
-    Contact contact = Contact.builder()
-            .name("Liza")
-            .lastName("Kim")
-            .phone("0587285"+i)
-            .email("Nasty"+i+"@gmail.com")
-            .address("Silver 10")
-            .description("second number 054898884")
-            .build();
+//    Contact contact = Contact.builder()
+//            .name("Liza")
+//            .lastName("Kim")
+//            .phone("0587285"+i)
+//            .email("Nasty"+i+"@gmail.com")
+//            .address("Silver 10")
+//            .description("second number 054898884")
+//            .build();
     logger.info("Test run with data-->"+contact.toString());
     app.getHelperContact().openAddContactForm();
     app.getHelperContact().fillContactForm(contact);

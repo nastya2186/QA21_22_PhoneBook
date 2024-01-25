@@ -1,8 +1,16 @@
 package tests;
 
+import manager.DataProviderUser;
+import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
 
 public class LoginTests extends TestBase{
 
@@ -16,12 +24,12 @@ public class LoginTests extends TestBase{
 
     }
 
-    @Test
-    public void loginSuccess(){
+    @Test(dataProvider = "loginData", dataProviderClass = DataProviderUser.class)
+    public void loginSuccess(String email, String password){
         logger.info("Start test with name `loginSuccess`");
-        logger.info("Test data --->email: `liza19@gmail.com` & password: `Maksliza1914#`");
+        logger.info("Test data --->email: " + email+ "password: "+ password);
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("liza19@gmail.com", "Maksliza1914#");
+        app.getHelperUser().fillLoginRegistrationForm(email, password);
         app.getHelperUser().submitLogin();
 
 
@@ -32,11 +40,13 @@ public class LoginTests extends TestBase{
 
     }
 
-    @Test
-    public void loginSuccessModel(){
-        logger.info("Test data --->email: `liza19@gmail.com` & password: `Maksliza1914#`");
+
+
+    @Test(dataProvider = "loginModel", dataProviderClass = DataProviderUser.class)
+    public void loginSuccessModel(User user){
+        logger.info("Test data --->" + user.toString());
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm("liza19@gmail.com", "Maksliza1914#");
+        app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitLogin();
 
 
