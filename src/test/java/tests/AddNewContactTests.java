@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class AddNewContactTests extends TestBase{
 
-@BeforeClass
+@BeforeClass(alwaysRun = true)
 public void preConditions(){
 if(!app.getHelperUser().isLogged()){
     app.getHelperUser().login(new User().withEmail("liza19@gmail.com").withPassword("Maksliza1914#"));
@@ -40,7 +40,7 @@ if(!app.getHelperUser().isLogged()){
 
 }
 
-    @Test
+    @Test(groups = {"smoke", "regress", "retest"})
     public void addNewContactReqSuccess(){
         Contact contact = Contact.builder()
                 .name("Liza")

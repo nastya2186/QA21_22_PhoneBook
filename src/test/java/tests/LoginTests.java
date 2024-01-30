@@ -15,7 +15,7 @@ import java.util.Objects;
 public class LoginTests extends TestBase{
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void preConditions(){
         if(app.getHelperUser().isLogged()){
             app.getHelperUser().logout();
@@ -71,7 +71,7 @@ public class LoginTests extends TestBase{
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void loginWrongEmail(){
         logger.info("Test data --->email: `liza19gmail.com` & password: `Maksliza1914#`");
         app.getHelperUser().openLoginRegistrationForm();
