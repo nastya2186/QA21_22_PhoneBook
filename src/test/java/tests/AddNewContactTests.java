@@ -117,17 +117,17 @@ if(!app.getHelperUser().isLogged()){
 
     }
 
-    @Test
-    public void addNewContactWrongPhone(){
+    @Test(dataProvider = "contactWrongPhone", dataProviderClass = DataProviderContact.class)
+    public void addNewContactWrongPhone(Contact contact){
         int i = (int)(System.currentTimeMillis()/1000%3600);
-        Contact contact = Contact.builder()
-                .name("Liza")
-                .lastName("Kim")
-                .phone("05"+i)
-                .email("Nasty"+i+"@gmail.com")
-                .address("Silver 10")
-                .description("second number 054898884")
-                .build();
+//        Contact contact = Contact.builder()
+//                .name("Liza")
+//                .lastName("Kim")
+//                .phone("05"+i)
+//                .email("Nasty"+i+"@gmail.com")
+//                .address("Silver 10")
+//                .description("second number 054898884")
+//                .build();
         logger.info("Test run with data-->"+contact.toString());
         app.getHelperContact().openAddContactForm();
         app.getHelperContact().fillContactForm(contact);
